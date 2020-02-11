@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div style="width:100%;">
     <!--헤더-->
     <div style="width:100%; height:156px;" class="border"></div>
 
-    <!--케러셀-->
-    <div style="width:100%; height:300px;" class="border">
+    <!--데스크톱 케러셀-->
+    <div class="desktop_banner" style="width:100%; height:300px;">
       <b-carousel
       style="height:100%;"
       id="carousel-1"
@@ -23,6 +23,32 @@
         <b-carousel-slide style="height:100%;" img-src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1580262479.jpg"></b-carousel-slide>
 
         <b-carousel-slide style="height:100%;" img-src="https://img-cf.kurly.com/shop/data/main/1/pc_img_1580722950.jpg"></b-carousel-slide>
+
+
+      </b-carousel>
+
+    </div>
+
+    <!--모바일 케러셀-->
+    <div class="mobile_banner" style="width:100%;">
+      <b-carousel
+      style="height:100%;"
+      id="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      background="#ababab"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+      >
+        <b-carousel-slide style="height:100%;" img-src="https://img-cf.kurly.com/shop/data/main/1/mobile_img_1580465698.jpg"></b-carousel-slide>
+
+        <b-carousel-slide style="height:100%;" img-src="https://img-cf.kurly.com/shop/data/main/1/mobile_img_1581063837.jpg"></b-carousel-slide>
+
+        <b-carousel-slide style="height:100%;" img-src="https://img-cf.kurly.com/shop/data/main/1/mobile_img_1581302984.jpg"></b-carousel-slide>
+
+        <b-carousel-slide style="height:100%;" img-src="https://img-cf.kurly.com/shop/data/main/1/mobile_img_1569230790.jpg"></b-carousel-slide>
 
 
       </b-carousel>
@@ -121,17 +147,17 @@
     </div>
 
     <!-- 일일 특가 -->
-    <div style="width:100%; height:auto;" >
-      <div style="height: auto; margin-top:80px; margin-bottom:80px; margin-left:0; width:100%; padding:4%; ">
-        <div class="mb-2">
+    <div style="width:100%; height:auto;" class="mt-5">
+      <div class="row buydeal" style="height: auto; width:100%; margin:0 !important; ">
+        <div class="buydeal-text col-xs-12 col-sm-4 col-md-4 col-lg-4 mb-2">
           <h1 style="color:#faa536; font-size:18px; font-weight:bold; margin-bottom: 0px;">바이딜 특가</h1>
           <span style="color:#999; font-size:14px; ">오직 바이딜에서만 만나볼 수 있는 특가!</span>
         </div>
         
-        <div>
-            <div style="width:100%; ">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <div style="width:100%;">
               <a href="http://dev.buymall.dubu4.com:3000/store/product/391">
-                  <img src="https://i.ibb.co/yh8Pf9F/mask.png" style="width:100%; height:auto; max-height:500px;"></img>
+                  <img src="https://img-cf.kurly.com/shop/data/goods/1580806698409z0.jpg" style="width:100%; height:auto;"></img>
               </a>
               <div class="pl-1 pt-2">
                 <div style="font-size:17px;">
@@ -155,7 +181,7 @@
     </div>
 
     <!--스와이프js 알뜰상품-->
-    <div style="width:100%; height:auto;">
+    <div style="width:100%; height:auto;" class="mb-5">
       <h4 class="h4_title">
         이 상품 어때요?
       </h4>
@@ -246,7 +272,108 @@
     </div>
 
     <!--카테고리 + 스와이프-->
-    <div style="height:850px; width:100%;" class="border"></div>
+    <div class="category_swipe" style="height:auto; width:100%;">
+      <h4 class="h4_title">
+        MD의 추천
+      </h4>
+      <swiper :options="TextSwiperOption" class="txt_swiper" style="height:auto; border-top:1px solid #f7f7f7; border-bottom:1px solid #f7f7f7;" >
+        <swiper-slide class="Text_swiper_slide swiper_active_custom" style="margin-left:4%;">
+          <span class="swiper_span swiper_span_active_custom">
+            채소
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+             과일·견과·쌀 
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+            수산·해산·건어물
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+            정육·계란
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+            국·반찬·메인요리
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+            샐러드·간편식
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+            면·양념·오일
+          </span>
+        </swiper-slide>
+        <swiper-slide class="Text_swiper_slide">
+          <span class="swiper_span">
+            음료·우유·떡·간식
+          </span>
+        </swiper-slide>
+      </swiper>
+      <div class="mt-3" style="width:100%;height:auto;">
+        <div class="text-center d-flex row" style="margin:0 !important;">
+          <div class="d-inline-block col-4" style="">
+            <img src="https://img-cf.kurly.com/shop/data/goods/1532654724641l0.jpg" style="width:100%;">
+            <div style="height:88px; width:100%; font-size:0.9em; text-align:left;">
+              <span class="d-inline-block pt-1">깐대파 500g</span><br>
+              <span style="font-weight:600;">2,900원</span>
+            </div>
+            <span></span>
+          </div>
+          <div class="d-inline-block col-4" >
+            <img src="https://img-cf.kurly.com/shop/data/goods/1535438202749l0.jpg" style="width:100%;">
+            <div style="height:88px; width:100%; font-size:0.9em; text-align:left;">
+              <span class="d-inline-block pt-1">흙생강 100g</span><br>
+              <span style="font-weight:600;">1,800원</span>
+            </div>
+            <span></span>
+          </div>
+          <div class="d-inline-block col-4" >
+            <img src="https://img-cf.kurly.com/shop/data/goods/157655557851l0.jpg" style="width:100%;">
+            <div style="height:88px; width:100%; font-size:0.9em; text-align:left;">
+              <span class="d-inline-block pt-1">깐도라지 100g</span><br>
+              <span style="font-weight:600;">2,800원</span>
+            </div>
+            <span></span>
+          </div>
+        </div>
+        <div class="text-center d-flex row" style="margin:0 !important;">
+          <div class="d-inline-block col-4">
+            <img src="https://img-cf.kurly.com/shop/data/goods/1542003260105l0.jpg" style="width:100%;">
+            <div style="height:88px; width:100%; font-size:0.9em; text-align:left;">
+              <span class="d-inline-block pt-1">GAP 밀양 깻잎 3속</span><br>
+              <span style="font-weight:600;">1,120원</span>
+            </div>
+            <span></span>
+          </div>
+          <div class="d-inline-block col-4">
+            <img src="https://img-cf.kurly.com/shop/data/goods/1580708666582l0.jpg" style="width:100%;">
+            <div style="height:88px; width:100%; font-size:0.9em; text-align:left;">
+              <span class="d-inline-block pt-1">GAP 밀양 깻잎 3속</span><br>
+              <span style="font-weight:600;">1,120원</span>
+            </div>
+            <span></span>
+          </div>
+          <div class="d-inline-block col-4">
+            <img src="https://img-cf.kurly.com/shop/data/goods/1580447356481l0.jpg" style="width:100%;">
+            <div style="height:88px; width:100%; font-size:0.9em; text-align:left;">
+              <span class="d-inline-block pt-1">당귀잎 35g</span><br>
+              <span style="font-weight:600;">1,850원</span>
+            </div>
+            <span></span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
 
     <!--친구초대 배너-->
     <div style="height:140px; width:100%; background-color: rgb(230, 237, 242);">
@@ -449,21 +576,17 @@ export default {
     return {
       swiperOption: {
         // swiper 옵션, 콜백함수 모두 동일하게 사용
-        slidesPerView: 4,
+        slidesPerView: 3,
       spaceBetween: 30,
       freeMode: true,
+      },
+      TextSwiperOption: {
+        // swiper 옵션, 콜백함수 모두 동일하게 사용
+        slidesPerView: 2,
+        spaceBetween: 30,
+        freeMode: true,
       }
     }
-  },
-  computed: {
-    swiper() {
-      return this.$refs.mySwiper.swiper
-    }
-  },
-  mounted() {
-    // 현재 swiper 인스턴스를 확인
-    console.log('this is current swiper instance object', this.swiper)
-    this.swiper.slideTo(3, 1000, false)
   },
   methods: {
     onSlideStart(slide) {
@@ -480,7 +603,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Gothic+A1:500,600&display=swap');
   .slide_div{
-    width:38% !important;
+    width:25% !important;
     height: auto;
     margin-right: 15px !important;
   }
@@ -494,6 +617,23 @@ export default {
   .swipe_txt_div{
     height: 120px;
   }
+
+  .Text_swiper_slide{
+    width:auto !important;
+    padding-top:6px; 
+    padding-bottom:6px;
+  }
+
+  .swiper_active_custom{
+    border-bottom:2px solid #5f0080;
+    font-weight: bold;
+  }
+
+  .swiper_span_active_custom{
+    color:#5f0080 !important;
+
+  }
+
   .h4_title{
     text-align: center;
     padding-top: 80px;
@@ -503,11 +643,71 @@ export default {
     font-weight: 500;
   }
 
-  .carousel-inner{
-    height: 100% !important;
+  @media (max-width: 575px) {
+    .h4_title{
+      font-size: 18px;
+      text-align: left;
+      padding-left: 4%;
+      padding-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .slide_div{
+      width:38% !important;
+    }
+
+    .category_swipe{
+      padding:0;
+    }
+
+    .txt_swiper{
+      width:100% !important;
+    }
+
+    .desktop_banner{
+      display: none;
+    }
+    .mobile_banner{
+      display: block !important;
+    }
   }
+
+
+
+  @media (min-width: 768px) {
+    .buydeal-text{
+      text-align: right;
+    }
+
+    .buydeal{
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  }
+  @media (min-width: 577px) {
+    .carousel-inner{
+      height: 100% !important;
+    }
+  }
+
+  
   .img-fluid{
     height: 100% !important;
     object-fit: cover;
+  }
+
+  .swiper_span{
+    font-size: 0.8em;
+    color:#999;
+  }
+
+  .category_swipe{
+    padding:4%;
+  }
+  .txt_swiper{
+    width:50%;
+  }
+  .mobile_banner{
+    display: none;
   }
 </style>
